@@ -8,7 +8,6 @@ com\huanshi\gui\view\container\panel\AbstractFoldPanel$1.class
 com\huanshi\gui\view\container\panel\DateTextField.class
 com\huanshi\gui\view\container\panel\LoadingPanel.class
 com\huanshi\gui\view\container\dialog\AbstractDialog.class
-com\huanshi\gui\view\container\panel\IconPanel.class
 com\huanshi\gui\view\widget\TextArea$1.class
 com\huanshi\gui\view\widget\TextArea.class
 com\huanshi\gui\view\container\scrollpane\TextAreaScrollPane.class
@@ -18,7 +17,6 @@ com\huanshi\gui\view\container\panel\IconTextField.class
 com\huanshi\gui\view\widget\TextArea$2.class
 com\huanshi\gui\view\container\scrollpane\AbstractScrollPane$1.class
 com\huanshi\gui\view\container\panel\DialogTitleBar.class
-com\huanshi\gui\view\container\panel\IconButton.class
 com\huanshi\gui\view\widget\TextField$2.class
 com\huanshi\gui\view\container\scrollpane\AbstractScrollPane.class
 com\huanshi\gui\view\container\panel\AbstractPanel.class
@@ -36,11 +34,13 @@ com\huanshi\gui\view\container\window\AbstractWindow$1.class
 com\huanshi\gui\view\container\panel\AbstractFoldPanel.class
 com\huanshi\gui\view\widget\TextField$1.class
 com\huanshi\gui\view\MouseLock.class
+com\huanshi\gui\view\container\frame\AbstractCustomFrame$1.class
 com\huanshi\gui\view\container\frame\AbstractFrame$2.class
 com\huanshi\gui\view\container\window\Splash.class
 com\huanshi\gui\view\container\dialog\AbstractDialog$1.class
 com\huanshi\gui\view\widget\Button.class
 com\huanshi\gui\view\container\panel\TitleDateTextField.class
+com\huanshi\gui\view\container\frame\AbstractCustomFrame.class
 com\huanshi\gui\view\widget\Table$2.class
 com\huanshi\gui\view\widget\TextField.class
 com\huanshi\gui\view\widget\ComboBox.class
@@ -48,7 +48,9 @@ com\huanshi\gui\view\container\loading\AbstractLoading.class
 com\huanshi\gui\view\widget\Icon.class
 com\huanshi\gui\view\widget\PasswordField.class
 com\huanshi\gui\view\container\window\AbstractWindow.class
+com\huanshi\gui\view\container\frame\AbstractCustomFrame$2.class
 com\huanshi\gui\view\container\scrollpane\AbstractScrollPane$3.class
 com\huanshi\gui\view\container\panel\IconTitle.class
 com\huanshi\gui\view\container\scrollpane\TableScrollPane.class
 com\huanshi\gui\view\widget\PasswordField$1.class
+com\huanshi\gui\view\widget\IconButton.class

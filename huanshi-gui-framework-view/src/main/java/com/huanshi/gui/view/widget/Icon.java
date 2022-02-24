@@ -12,10 +12,12 @@ import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Graphics;
 
 @SuppressWarnings("all")
-public class Icon extends JLabel implements Widget {
+public class Icon extends JPanel implements Widget {
     @Getter
     private Key key;
     @Getter
@@ -25,25 +27,26 @@ public class Icon extends JLabel implements Widget {
     private IconModel iconModel;
 
     @Override
-    public ImageIcon getIcon() {
-        return (ImageIcon) super.getIcon();
-    }
-
-    @Override
     public void init(@NotNull AbstractModel model) {
-        if (model.getClass() != IconModel.class) {
+        if (!(model instanceof IconModel iconModel)) {
             throw new ModelNotMatchedException(model.getKey(), getClass());
         }
-        iconModel = (IconModel) model;
-        setIcon(iconModel.getIcon());
+        this.iconModel = iconModel;
+        setBorder(null);
+        setLayout(null);
+        setBackground(iconModel.getBackground());
         key = iconModel.getKey();
-        widgetSize = new WidgetSize(new Size(getIcon().getIconWidth(), getIcon().getIconHeight()), iconModel.getPadding(), iconModel.getMargin());
+        widgetSize = new WidgetSize(new Size(iconModel.getIcon().getIconWidth(), iconModel.getIcon().getIconHeight()), iconModel.getPadding(), iconModel.getMargin());
         widgetPosition = new WidgetPosition(new Position(0, 0), iconModel.getMargin());
         iconModel.addPropertyChangeListener(e -> {
-            if ("icon".equals(e.getPropertyName())) {
-                setIcon((ImageIcon) e.getNewValue());
-                if (getWidgetWidth() != getIcon().getIconWidth() || getWidgetHeight() != getIcon().getIconHeight()) {
-                    setWidgetSize(getIcon().getIconWidth(), getIcon().getIconHeight());
+            switch (e.getPropertyName()) {
+                case "background" -> setBackground((Color) e.getNewValue());
+                case "icon" -> {
+                    if (getWidgetWidth() != iconModel.getIcon().getIconWidth() || getWidgetHeight() != iconModel.getIcon().getIconHeight()) {
+                        setWidgetSize(iconModel.getIcon().getIconWidth(), iconModel.getIcon().getIconHeight());
+                    } else {
+                        repaint();
+                    }
                 }
             }
         });
@@ -59,6 +62,12 @@ public class Icon extends JLabel implements Widget {
                 firePropertyChange("position", e.getOldValue(), e.getNewValue());
             }
         });
+    }
+
+    @Override
+    public void paintComponent(Graphics graphics) {
+        super.paintComponent(graphics);
+        graphics.drawImage(((ImageIcon) iconModel.getIcon()).getImage(), 0, 0, iconModel.getIcon().getIconWidth(), iconModel.getIcon().getIconHeight(), this);
     }
 
     @Override

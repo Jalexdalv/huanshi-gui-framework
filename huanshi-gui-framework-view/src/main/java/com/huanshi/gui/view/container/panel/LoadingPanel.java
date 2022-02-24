@@ -55,9 +55,17 @@ public class LoadingPanel extends AbstractPanel {
     }
 
     @Override
-    protected void paintComponent(@NotNull Graphics graphics) {
+    public void paintComponent(@NotNull Graphics graphics) {
         super.paintComponent(graphics);
-        draw(graphics);
+        Graphics2D graphics2D = (Graphics2D) graphics.create();
+        graphics2D.setRenderingHints(new RenderingHints(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY) {{
+            put(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            put(RenderingHints.KEY_FRACTIONALMETRICS, RenderingHints.VALUE_FRACTIONALMETRICS_ON);
+        }});
+        graphics2D.setColor(loadingPanelModel.getStrokeBackground());
+        graphics2D.setStroke(new BasicStroke(loadingPanelModel.getLoadingSize().thickness(), BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        graphics2D.drawArc(GuiUtils.divide(getLayoutWidth(), 2) - GuiUtils.divide(loadingPanelModel.getLoadingSize().diameter(), 2), GuiUtils.divide(getLayoutHeight(), 2) - GuiUtils.divide(loadingPanelModel.getLoadingSize().diameter(), 2), loadingPanelModel.getLoadingSize().diameter(), loadingPanelModel.getLoadingSize().diameter(), startAngle, arcAngle);
+        graphics2D.dispose();
     }
 
     public void start() {
@@ -70,17 +78,5 @@ public class LoadingPanel extends AbstractPanel {
         arcAngle = 0;
         isReversal = false;
         isLink = false;
-    }
-
-    private void draw(@NotNull Graphics graphics) {
-        Graphics2D graphics2D = (Graphics2D) graphics.create();
-        graphics2D.setRenderingHints(new RenderingHints(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY) {{
-            put(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            put(RenderingHints.KEY_FRACTIONALMETRICS, RenderingHints.VALUE_FRACTIONALMETRICS_ON);
-        }});
-        graphics2D.setColor(loadingPanelModel.getStrokeBackground());
-        graphics2D.setStroke(new BasicStroke(loadingPanelModel.getLoadingSize().thickness(), BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-        graphics2D.drawArc(GuiUtils.divide(getLayoutWidth(), 2) - GuiUtils.divide(loadingPanelModel.getLoadingSize().diameter(), 2), GuiUtils.divide(getLayoutHeight(), 2) - GuiUtils.divide(loadingPanelModel.getLoadingSize().diameter(), 2), loadingPanelModel.getLoadingSize().diameter(), loadingPanelModel.getLoadingSize().diameter(), startAngle, arcAngle);
-        graphics2D.dispose();
     }
 }

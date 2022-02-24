@@ -5,6 +5,7 @@ import com.huanshi.gui.common.annotation.ModelComponent;
 import com.huanshi.gui.common.config.Parser;
 import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.common.type.FrameStatus;
+import com.huanshi.gui.model.widget.IconButtonModel;
 import com.huanshi.gui.model.widget.IconModel;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;

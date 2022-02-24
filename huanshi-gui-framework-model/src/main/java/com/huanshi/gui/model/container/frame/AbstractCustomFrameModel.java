@@ -1,6 +1,5 @@
 package com.huanshi.gui.model.container.frame;
 
-import com.huanshi.gui.common.annotation.ModelComponent;
 import com.huanshi.gui.common.config.Parser;
 import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.common.data.Position;
@@ -8,7 +7,6 @@ import com.huanshi.gui.common.data.Size;
 import com.huanshi.gui.common.type.FrameStatus;
 import com.huanshi.gui.common.utils.GuiUtils;
 import com.huanshi.gui.model.AbstractModel;
-import com.huanshi.gui.model.container.panel.FrameTitleBarModel;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
@@ -16,9 +14,7 @@ import java.awt.Color;
 import java.awt.Image;
 
 @SuppressWarnings("all")
-public abstract class AbstractFrameModel extends AbstractModel {
-    @ModelComponent(names = "title-bar")
-    private FrameTitleBarModel frameTitleBarModel;
+public abstract class AbstractCustomFrameModel extends AbstractModel {
     @Getter
     private Color background;
     @Getter
@@ -56,7 +52,6 @@ public abstract class AbstractFrameModel extends AbstractModel {
         if (isMaxable) {
             if (this.frameStatus != frameStatus) {
                 this.frameStatus = frameStatus;
-                frameTitleBarModel.setFrameStatus(frameStatus);
                 firePropertyChange("frame-status", frameStatus);
             }
         }

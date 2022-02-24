@@ -1,11 +1,9 @@
-package com.huanshi.gui.model.container.panel;
+package com.huanshi.gui.model.widget;
 
-import com.huanshi.gui.common.annotation.AutowiredModelComponent;
 import com.huanshi.gui.common.config.Parser;
 import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.common.type.ButtonStatus;
 import com.huanshi.gui.common.type.ButtonType;
-import com.huanshi.gui.model.widget.IconModel;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
@@ -13,9 +11,7 @@ import javax.swing.Icon;
 import java.awt.Color;
 
 @SuppressWarnings("all")
-public class IconButtonModel extends IconPanelModel {
-    @AutowiredModelComponent(names = "icon")
-    private IconModel iconModel;
+public class IconButtonModel extends IconModel {
     @Getter
     private ButtonType buttonType;
     @Getter
@@ -45,7 +41,7 @@ public class IconButtonModel extends IconPanelModel {
                 key.addLast("press-background"); pressBackground = parser.parseColor(key); key.removeLast();
             }
             case ICON -> {
-                defaultIcon = iconModel.getIcon();
+                defaultIcon = getIcon();
                 key.addLast("touch-icon"); touchIcon = parser.parseIcon(key); key.removeLast();
                 key.addLast("press-icon"); pressIcon = parser.parseIcon(key); key.removeLast();
             }
@@ -73,9 +69,9 @@ public class IconButtonModel extends IconPanelModel {
                 }
                 case ICON -> {
                     switch (buttonStatus) {
-                        case DEFAULT -> iconModel.setIcon(defaultIcon);
-                        case TOUCH -> iconModel.setIcon(touchIcon);
-                        case PRESS -> iconModel.setIcon(pressIcon);
+                        case DEFAULT -> setIcon(defaultIcon);
+                        case TOUCH -> setIcon(touchIcon);
+                        case PRESS -> setIcon(pressIcon);
                     }
                 }
             }

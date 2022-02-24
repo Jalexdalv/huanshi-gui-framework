@@ -31,8 +31,6 @@ import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.container.panel.DateTextFieldModel;
 import com.huanshi.gui.model.container.panel.DialogTitleBarModel;
 import com.huanshi.gui.model.container.panel.FrameTitleBarModel;
-import com.huanshi.gui.model.container.panel.IconButtonModel;
-import com.huanshi.gui.model.container.panel.IconPanelModel;
 import com.huanshi.gui.model.container.panel.IconPasswordFieldModel;
 import com.huanshi.gui.model.container.panel.IconTextFieldModel;
 import com.huanshi.gui.model.container.panel.IconTitleModel;
@@ -47,6 +45,7 @@ import com.huanshi.gui.model.container.scrollpane.TextAreaScrollPaneModel;
 import com.huanshi.gui.model.widget.ButtonModel;
 import com.huanshi.gui.model.widget.CheckBoxModel;
 import com.huanshi.gui.model.widget.ComboBoxModel;
+import com.huanshi.gui.model.widget.IconButtonModel;
 import com.huanshi.gui.model.widget.IconModel;
 import com.huanshi.gui.model.widget.PasswordFieldModel;
 import com.huanshi.gui.model.widget.TableModel;
@@ -59,8 +58,6 @@ import com.huanshi.gui.view.container.panel.AbstractPanel;
 import com.huanshi.gui.view.container.panel.DateTextField;
 import com.huanshi.gui.view.container.panel.DialogTitleBar;
 import com.huanshi.gui.view.container.panel.FrameTitleBar;
-import com.huanshi.gui.view.container.panel.IconButton;
-import com.huanshi.gui.view.container.panel.IconPanel;
 import com.huanshi.gui.view.container.panel.IconPasswordField;
 import com.huanshi.gui.view.container.panel.IconTextField;
 import com.huanshi.gui.view.container.panel.IconTitle;
@@ -77,6 +74,7 @@ import com.huanshi.gui.view.widget.Button;
 import com.huanshi.gui.view.widget.CheckBox;
 import com.huanshi.gui.view.widget.ComboBox;
 import com.huanshi.gui.view.widget.Icon;
+import com.huanshi.gui.view.widget.IconButton;
 import com.huanshi.gui.view.widget.PasswordField;
 import com.huanshi.gui.view.widget.Table;
 import com.huanshi.gui.view.widget.Text;
@@ -97,7 +95,6 @@ import java.util.LinkedList;
 public class Loader {
     private static final LinkedList<Class<?>> MODEL_COMPONENT_LIST = new LinkedList<>() {{
         add(IconButtonModel.class);
-        add(IconPanelModel.class);
         add(IconTitleModel.class);
         add(IconTextFieldModel.class);
         add(IconPasswordFieldModel.class);
@@ -125,7 +122,6 @@ public class Loader {
     private static final HashMap<Key, AbstractModel> LOADED_MODEL_MAP = new HashMap<>();
     private static final LinkedList<Class<?>> VIEW_COMPONENT_LIST = new LinkedList<>() {{
         add(IconButton.class);
-        add(IconPanel.class);
         add(IconTitle.class);
         add(IconTextField.class);
         add(IconPasswordField.class);
@@ -287,6 +283,7 @@ public class Loader {
         LinkedList<Field> viewComponentList = new LinkedList<>();
         LinkedList<Field> viewportComponentList = new LinkedList<>();
         LinkedList<Field> autowiredViewComponentList = new LinkedList<>();
+        LinkedList<Field> customFrameMoveBarList = new LinkedList<>();
         for (Field field : ReflectUtils.getFieldList(clazz)) {
             field.setAccessible(true);
             AutowiredView autowiredView = field.getAnnotation(AutowiredView.class);

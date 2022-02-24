@@ -1,6 +1,7 @@
 package com.huanshi.gui.model.container.panel;
 
 import com.huanshi.gui.common.annotation.ModelComponent;
+import com.huanshi.gui.model.widget.IconButtonModel;
 
 @SuppressWarnings("all")
 public class DialogTitleBarModel extends AbstractPanelModel {

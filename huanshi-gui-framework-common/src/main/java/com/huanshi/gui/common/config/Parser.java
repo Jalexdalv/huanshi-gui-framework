@@ -224,6 +224,20 @@ public class Parser {
         return imageIcon;
     }
 
+    @Nullable
+    public Icon parseBackgroundIcon(@NotNull Key key) {
+        Object value = getProperty(key);
+        if (value == null) {
+            return null;
+        }
+        if (!(value instanceof Map<?, ?> map) || !(map.get("path") instanceof String path) || !(map.get("width") instanceof Integer width) || !(map.get("height") instanceof Integer height)) {
+            throw new IllegalConfigException(key);
+        }
+        ImageIcon imageIcon = new ImageIcon(StringUtils.trim(path));
+        imageIcon.setImage(imageIcon.getImage().getScaledInstance((int) (width * WIDTH_SCALE), (int) (height * HEIGHT_SCALE), Image.SCALE_SMOOTH));
+        return imageIcon;
+    }
+
     @NotNull
     public Color parseColor(@NotNull Key key) {
         if (!(getProperty(key) instanceof Map<?, ?> map) || !(map.get("r") instanceof Integer r) || !(map.get("g") instanceof Integer g) || !(map.get("b") instanceof Integer b) || !(map.get("a") instanceof Integer a)) {

@@ -1,6 +1,7 @@
 package com.huanshi.gui.view.container.panel;
 
 import com.huanshi.gui.common.annotation.ViewComponent;
+import com.huanshi.gui.view.widget.IconButton;
 
 @SuppressWarnings("all")
 public class FrameTitleBar extends AbstractPanel {

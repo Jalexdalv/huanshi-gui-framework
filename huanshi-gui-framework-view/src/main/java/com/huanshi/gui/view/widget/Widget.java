@@ -135,5 +135,6 @@ public interface Widget {
 
     default void renderWidget() {
         ((Component) this).setBounds(getLayoutX(), getLayoutY(), getRealWidth(), getRealHeight());
+        ((Component) this).repaint();
     }
 }

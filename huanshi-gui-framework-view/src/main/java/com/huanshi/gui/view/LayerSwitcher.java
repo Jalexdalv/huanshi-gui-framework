@@ -3,6 +3,7 @@ package com.huanshi.gui.view;
 import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.container.dialog.AbstractDialogModel;
+import com.huanshi.gui.model.container.frame.AbstractCustomFrameModel;
 import com.huanshi.gui.model.container.frame.AbstractFrameModel;
 import com.huanshi.gui.model.container.loading.AbstractLoadingModel;
 import com.huanshi.gui.model.container.window.AbstractWindowModel;
@@ -37,10 +38,20 @@ public class LayerSwitcher {
         frameModel.setVisible(true);
     }
 
+    public static void show(@NotNull AbstractCustomFrameModel customFrameModel) {
+        while (!LAYER_STACK.empty()) {
+            hide();
+        }
+        LAYER_STACK.push(customFrameModel);
+        customFrameModel.setVisible(true);
+    }
+
     public static void show(@NotNull AbstractDialogModel dialogModel) {
         if (!LAYER_STACK.empty()) {
             if (LAYER_STACK.peek() instanceof AbstractFrameModel frameModel) {
                 frameModel.setOpacity(0.7F);
+            } else if (LAYER_STACK.peek() instanceof AbstractCustomFrameModel customFrameModel) {
+                customFrameModel.setOpacity(0.7F);
             } else if (LAYER_STACK.peek() instanceof AbstractDialogModel castDialogModel) {
                 castDialogModel.setOpacity(0.7F);
             } else if (LAYER_STACK.peek() instanceof AbstractWindowModel windowModel) {
@@ -59,6 +70,8 @@ public class LayerSwitcher {
         if (!LAYER_STACK.empty()) {
             if (LAYER_STACK.peek() instanceof AbstractFrameModel frameModel) {
                 frameModel.setOpacity(0.7F);
+            } else if (LAYER_STACK.peek() instanceof AbstractCustomFrameModel customFrameModel) {
+                customFrameModel.setOpacity(0.7F);
             } else if (LAYER_STACK.peek() instanceof AbstractDialogModel dialogModel) {
                 dialogModel.setOpacity(0.7F);
             } else if (LAYER_STACK.peek() instanceof AbstractWindowModel castWindowModel) {
@@ -77,6 +90,8 @@ public class LayerSwitcher {
         if (!LAYER_STACK.empty()) {
             if (LAYER_STACK.peek() instanceof AbstractFrameModel frameModel) {
                 frameModel.setOpacity(0.7F);
+            } else if (LAYER_STACK.peek() instanceof AbstractCustomFrameModel customFrameModel) {
+                customFrameModel.setOpacity(0.7F);
             } else if (LAYER_STACK.peek() instanceof AbstractDialogModel dialogModel) {
                 dialogModel.setOpacity(0.7F);
             } else if (LAYER_STACK.peek() instanceof AbstractWindowModel windowModel) {
@@ -98,6 +113,9 @@ public class LayerSwitcher {
             if (popModel instanceof AbstractFrameModel frameModel) {
                 frameModel.setOpacity(1.0F);
                 frameModel.setVisible(false);
+            } else if (LAYER_STACK.peek() instanceof AbstractCustomFrameModel customFrameModel) {
+                customFrameModel.setOpacity(1.0F);
+                customFrameModel.setVisible(false);
             } else if (popModel instanceof AbstractDialogModel dialogModel) {
                 dialogModel.setOpacity(1.0F);
                 dialogModel.setVisible(false);
@@ -112,6 +130,9 @@ public class LayerSwitcher {
                 if (LAYER_STACK.peek() instanceof AbstractFrameModel frameModel) {
                     frameModel.setOpacity(1.0F);
                     frameModel.setVisible(true);
+                } else if (popModel instanceof AbstractDialogModel dialogModel) {
+                    dialogModel.setOpacity(1.0F);
+                    dialogModel.setVisible(true);
                 } else if (LAYER_STACK.peek() instanceof AbstractDialogModel dialogModel) {
                     dialogModel.setOpacity(1.0F);
                     dialogModel.setVisible(true);

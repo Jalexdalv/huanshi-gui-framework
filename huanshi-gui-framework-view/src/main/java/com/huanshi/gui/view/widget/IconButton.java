@@ -1,13 +1,13 @@
-package com.huanshi.gui.view.container.panel;
+package com.huanshi.gui.view.widget;
 
 import com.huanshi.gui.common.exception.ModelNotMatchedException;
 import com.huanshi.gui.model.AbstractModel;
-import com.huanshi.gui.model.container.panel.IconButtonModel;
+import com.huanshi.gui.model.widget.IconButtonModel;
 import com.huanshi.gui.view.MouseLock;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("all")
-public class IconButton extends IconPanel {
+public class IconButton extends Icon {
     private IconButtonModel iconButtonModel;
 
     @Override

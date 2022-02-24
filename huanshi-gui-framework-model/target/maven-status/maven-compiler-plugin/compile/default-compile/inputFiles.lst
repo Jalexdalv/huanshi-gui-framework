@@ -1,7 +1,5 @@
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\frame\AbstractFrameModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\panel\DialogTitleBarModel.java
-C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\panel\IconButtonModel.java
-C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\panel\IconPanelModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\AbstractModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\dialog\AbstractDialogModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\widget\ComboBoxModel.java
@@ -11,11 +9,13 @@ C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-mode
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\panel\TitleTextFieldModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\window\AbstractWindowModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\widget\TableModel.java
+C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\frame\AbstractCustomFrameModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\scrollpane\AbstractScrollPaneModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\widget\TextAreaModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\widget\PasswordFieldModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\widget\CheckBoxModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\widget\IconModel.java
+C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\widget\IconButtonModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\scrollpane\TextAreaScrollPaneModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\panel\AbstractFoldPanelModel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-model\src\main\java\com\huanshi\gui\model\container\panel\AbstractPanelModel.java

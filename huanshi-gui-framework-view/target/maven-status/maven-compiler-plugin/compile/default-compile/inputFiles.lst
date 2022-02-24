@@ -12,6 +12,7 @@ C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\MouseLock.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\Text.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\frame\AbstractFrame.java
+C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\IconButton.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\FrameTitleBar.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\TitleTextAreaScrollPane.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\IconTitle.java
@@ -22,7 +23,6 @@ C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\IconPasswordField.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\scrollpane\TextAreaScrollPane.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\Button.java
-C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\IconPanel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\Icon.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\AbstractFoldPanel.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\scrollpane\TableScrollPane.java
@@ -30,8 +30,8 @@ C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\CheckBox.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\ComboBox.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\dialog\AbstractDialog.java
+C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\frame\AbstractCustomFrame.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\loading\AbstractLoading.java
-C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\IconButton.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\TextArea.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\DateTextField.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\TitleTextField.java

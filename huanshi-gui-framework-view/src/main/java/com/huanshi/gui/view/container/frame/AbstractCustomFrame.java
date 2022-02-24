@@ -1,6 +1,5 @@
 package com.huanshi.gui.view.container.frame;
 
-import com.huanshi.gui.common.annotation.ViewComponent;
 import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.common.data.WidgetPosition;
 import com.huanshi.gui.common.data.WidgetSize;
@@ -8,10 +7,9 @@ import com.huanshi.gui.common.exception.ModelNotMatchedException;
 import com.huanshi.gui.common.type.FrameStatus;
 import com.huanshi.gui.common.utils.GuiUtils;
 import com.huanshi.gui.model.AbstractModel;
-import com.huanshi.gui.model.container.frame.AbstractFrameModel;
+import com.huanshi.gui.model.container.frame.AbstractCustomFrameModel;
 import com.huanshi.gui.view.MouseLock;
 import com.huanshi.gui.view.container.Container;
-import com.huanshi.gui.view.container.panel.FrameTitleBar;
 import com.huanshi.gui.view.widget.Widget;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
@@ -23,9 +21,7 @@ import java.awt.event.MouseEvent;
 import java.util.LinkedList;
 
 @SuppressWarnings("all")
-public abstract class AbstractFrame extends JFrame implements Container {
-    @ViewComponent(names = "title-bar")
-    private FrameTitleBar frameTitleBar;
+public abstract class AbstractCustomFrame extends JFrame implements Container {
     @Getter
     private final LinkedList<Widget> widgetList = new LinkedList<>();
     @Getter
@@ -34,35 +30,36 @@ public abstract class AbstractFrame extends JFrame implements Container {
     private WidgetSize widgetSize;
     @Getter
     private WidgetPosition widgetPosition;
-    private AbstractFrameModel frameModel;
+    private AbstractCustomFrameModel customFrameModel;
+    private MouseAdapter moveMouseAdapter;
     private int moveX, moveY;
 
     @Override
     public void init(@NotNull AbstractModel model) {
-        if (!(model instanceof AbstractFrameModel frameModel)) {
+        if (!(model instanceof AbstractCustomFrameModel customFrameModel)) {
             throw new ModelNotMatchedException(model.getKey(), getClass());
         }
-        this.frameModel = frameModel;
+        this.customFrameModel = customFrameModel;
         setLayout(null);
         setUndecorated(true);
-        setBackground(frameModel.getBackground());
-        setIconImage(frameModel.getLogo());
-        setTitle(frameModel.getTitle());
-        key = frameModel.getKey();
-        widgetSize = new WidgetSize(frameModel.getStandardSize().clone(), frameModel.getPadding(), frameModel.getMargin());
-        widgetPosition = new WidgetPosition(frameModel.getStandardPosition().clone(), frameModel.getMargin());
-        frameModel.addPropertyChangeListener(e -> {
+        setBackground(customFrameModel.getBackground());
+        setIconImage(customFrameModel.getLogo());
+        setTitle(customFrameModel.getTitle());
+        key = customFrameModel.getKey();
+        widgetSize = new WidgetSize(customFrameModel.getStandardSize().clone(), customFrameModel.getPadding(), customFrameModel.getMargin());
+        widgetPosition = new WidgetPosition(customFrameModel.getStandardPosition().clone(), customFrameModel.getMargin());
+        customFrameModel.addPropertyChangeListener(e -> {
             switch (e.getPropertyName()) {
                 case "frame-status" -> {
-                    if (frameModel.isMaxable()) {
+                    if (customFrameModel.isMaxable()) {
                         switch ((FrameStatus) e.getNewValue()) {
                             case STANDARD -> {
-                                setWidgetPosition(frameModel.getStandardPosition().getX(), frameModel.getStandardPosition().getY());
-                                setWidgetSize(frameModel.getStandardSize().getWidth(), frameModel.getStandardSize().getHeight());
+                                setWidgetPosition(customFrameModel.getStandardPosition().getX(), customFrameModel.getStandardPosition().getY());
+                                setWidgetSize(customFrameModel.getStandardSize().getWidth(), customFrameModel.getStandardSize().getHeight());
                             }
                             case MAX -> {
-                                setWidgetPosition(frameModel.getMaxPosition().getX(), frameModel.getMaxPosition().getY());
-                                setWidgetSize(frameModel.getMaxSize().getWidth(), frameModel.getMaxSize().getHeight());
+                                setWidgetPosition(customFrameModel.getMaxPosition().getX(), customFrameModel.getMaxPosition().getY());
+                                setWidgetSize(customFrameModel.getMaxSize().getWidth(), customFrameModel.getMaxSize().getHeight());
                             }
                         }
                     }
@@ -70,7 +67,7 @@ public abstract class AbstractFrame extends JFrame implements Container {
                 case "opacity" -> setOpacity((float) e.getNewValue());
                 case "visible" -> {
                     MouseLock.reset();
-                    setWidgetPosition(frameModel.getStandardPosition().getX(), frameModel.getStandardPosition().getY());
+                    setWidgetPosition(customFrameModel.getStandardPosition().getX(), customFrameModel.getStandardPosition().getY());
                     setVisible((boolean) e.getNewValue());
                 }
                 case "iconified" -> setExtendedState(JFrame.ICONIFIED);
@@ -109,7 +106,7 @@ public abstract class AbstractFrame extends JFrame implements Container {
                 }
             });
         }
-        MouseAdapter moveMouseAdapter = new MouseAdapter() {
+        moveMouseAdapter = new MouseAdapter() {
             @Override
             public void mousePressed(@NotNull MouseEvent e) {
                 moveX = e.getPoint().x;
@@ -118,28 +115,31 @@ public abstract class AbstractFrame extends JFrame implements Container {
             @Override
             public void mouseClicked(@NotNull MouseEvent e) {
                 if (e.getClickCount() == 2) {
-                    if (frameModel.isMaxable()) {
-                        switch (frameModel.getFrameStatus()) {
-                            case STANDARD -> frameModel.setFrameStatus(FrameStatus.MAX);
-                            case MAX -> frameModel.setFrameStatus(FrameStatus.STANDARD);
+                    if (customFrameModel.isMaxable()) {
+                        switch (customFrameModel.getFrameStatus()) {
+                            case STANDARD -> customFrameModel.setFrameStatus(FrameStatus.MAX);
+                            case MAX -> customFrameModel.setFrameStatus(FrameStatus.STANDARD);
                         }
                     }
                 }
             }
             @Override
             public void mouseDragged(@NotNull MouseEvent e) {
-                switch (frameModel.getFrameStatus()) {
+                switch (customFrameModel.getFrameStatus()) {
                     case STANDARD -> setWidgetPosition(e.getXOnScreen() - moveX, e.getYOnScreen() - moveY);
                     case MAX -> {
-                        frameModel.setFrameStatus(FrameStatus.STANDARD);
-                        moveX = (int) (moveX * ((double) frameModel.getStandardSize().getWidth() / (double) frameModel.getMaxSize().getWidth()));
-                        moveY = (int) (moveY * ((double) frameModel.getStandardSize().getHeight() / (double) frameModel.getMaxSize().getHeight()));
+                        customFrameModel.setFrameStatus(FrameStatus.STANDARD);
+                        moveX = (int) (moveX * ((double) customFrameModel.getStandardSize().getWidth() / (double) customFrameModel.getMaxSize().getWidth()));
+                        moveY = (int) (moveY * ((double) customFrameModel.getStandardSize().getHeight() / (double) customFrameModel.getMaxSize().getHeight()));
                     }
                 }
             }
         };
-        frameTitleBar.addMouseListener(moveMouseAdapter);
-        frameTitleBar.addMouseMotionListener(moveMouseAdapter);
+    }
+
+    public void addMoveListener(Widget widget) {
+        ((Component) widget).addMouseListener(moveMouseAdapter);
+        ((Component) widget).addMouseMotionListener(moveMouseAdapter);
     }
 
     @Override
@@ -149,12 +149,8 @@ public abstract class AbstractFrame extends JFrame implements Container {
     public void updateWidgetPosition() {}
 
     @Override
-    public void updateContainerSize() {
-        frameTitleBar.setWidgetWidth(getWidgetWidth());
-    }
+    public void updateContainerSize() {}
 
     @Override
-    public void updateContainerPosition() {
-        frameTitleBar.setWidgetPosition(0, 0);
-    }
+    public void updateContainerPosition() {}
 }
