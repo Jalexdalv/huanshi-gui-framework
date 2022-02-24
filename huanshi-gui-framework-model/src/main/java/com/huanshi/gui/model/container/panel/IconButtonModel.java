@@ -6,10 +6,11 @@ import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.common.type.ButtonStatus;
 import com.huanshi.gui.common.type.ButtonType;
 import com.huanshi.gui.model.widget.IconModel;
-import java.awt.Color;
-import javax.swing.Icon;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.Icon;
+import java.awt.Color;
 
 @SuppressWarnings("all")
 public class IconButtonModel extends IconPanelModel {

@@ -1,10 +1,12 @@
 package com.huanshi.gui.common.utils;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import org.jetbrains.annotations.NotNull;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 @SuppressWarnings("all")
 public class GuiUtils {
@@ -31,7 +33,15 @@ public class GuiUtils {
         return (int) ((double) dividend / divider);
     }
 
-    public static void showErrorDialog(@NotNull Throwable throwable) {
+    public static void showErrorDialog(@NotNull String message, @Nullable Throwable throwable) {
+        throwable.printStackTrace();
+        StringWriter stringWriter = new StringWriter();
+        throwable.printStackTrace(new PrintWriter(stringWriter));
+        JOptionPane.showMessageDialog(new JFrame(), message + " " + stringWriter.toString(), "错误", JOptionPane.ERROR_MESSAGE);
+        System.exit(-1);
+    }
+
+    public static void showErrorDialog(@Nullable Throwable throwable) {
         throwable.printStackTrace();
         StringWriter stringWriter = new StringWriter();
         throwable.printStackTrace(new PrintWriter(stringWriter));

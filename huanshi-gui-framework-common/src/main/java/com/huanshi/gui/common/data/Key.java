@@ -1,16 +1,17 @@
 package com.huanshi.gui.common.data;
 
 import com.huanshi.gui.common.exception.IllegalSubKeyException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Objects;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Objects;
 
 public class Key implements Iterable<String>, Cloneable {
     private LinkedList<Object> subKeyList = new LinkedList<>();

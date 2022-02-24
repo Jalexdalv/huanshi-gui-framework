@@ -6,9 +6,10 @@ import com.huanshi.gui.common.config.Parser;
 import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.common.type.FrameStatus;
 import com.huanshi.gui.model.widget.IconModel;
-import javax.swing.Icon;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.Icon;
 
 @SuppressWarnings("all")
 public class FrameTitleBarModel extends AbstractPanelModel {

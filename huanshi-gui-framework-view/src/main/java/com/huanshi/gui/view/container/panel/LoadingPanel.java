@@ -4,12 +4,13 @@ import com.huanshi.gui.common.exception.ModelNotMatchedException;
 import com.huanshi.gui.common.utils.GuiUtils;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.container.panel.LoadingPanelModel;
+import org.jetbrains.annotations.NotNull;
+
+import javax.swing.Timer;
 import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import javax.swing.Timer;
-import org.jetbrains.annotations.NotNull;
 
 public class LoadingPanel extends AbstractPanel {
     private Timer timer;

@@ -10,13 +10,14 @@ import com.huanshi.gui.model.container.window.AbstractWindowModel;
 import com.huanshi.gui.view.MouseLock;
 import com.huanshi.gui.view.container.Container;
 import com.huanshi.gui.view.widget.Widget;
+import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JDialog;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.LinkedList;
-import javax.swing.JDialog;
-import lombok.Getter;
-import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("all")
 public abstract class AbstractWindow extends JDialog implements Container {

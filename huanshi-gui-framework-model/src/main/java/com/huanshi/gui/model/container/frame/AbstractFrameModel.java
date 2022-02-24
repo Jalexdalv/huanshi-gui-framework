@@ -9,10 +9,11 @@ import com.huanshi.gui.common.type.FrameStatus;
 import com.huanshi.gui.common.utils.GuiUtils;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.container.panel.FrameTitleBarModel;
-import java.awt.Color;
-import java.awt.Image;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import java.awt.Color;
+import java.awt.Image;
 
 @SuppressWarnings("all")
 public abstract class AbstractFrameModel extends AbstractModel {

@@ -9,10 +9,11 @@ import com.huanshi.gui.common.exception.ModelNotMatchedException;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.widget.ButtonModel;
 import com.huanshi.gui.view.MouseLock;
-import java.awt.Color;
-import javax.swing.JButton;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JButton;
+import java.awt.Color;
 
 @SuppressWarnings("all")
 public class Button extends JButton implements Widget {

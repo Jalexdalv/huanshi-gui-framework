@@ -1,10 +1,11 @@
 package com.huanshi.gui.view;
 
 import com.huanshi.gui.view.widget.Widget;
-import java.awt.Component;
-import java.awt.event.MouseEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.awt.Component;
+import java.awt.event.MouseEvent;
 
 public class MouseLock {
     private static Widget enteredWidget;

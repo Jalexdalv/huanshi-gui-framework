@@ -5,14 +5,15 @@ import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.common.data.Margin;
 import com.huanshi.gui.common.data.Padding;
 import com.huanshi.gui.common.utils.ReflectUtils;
-import java.awt.GraphicsEnvironment;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import java.lang.reflect.Method;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.awt.GraphicsEnvironment;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import java.lang.reflect.Method;
 
 @SuppressWarnings("all")
 public abstract class AbstractModel {

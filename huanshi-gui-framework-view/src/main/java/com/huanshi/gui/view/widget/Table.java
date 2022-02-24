@@ -9,17 +9,18 @@ import com.huanshi.gui.common.data.table.TableData;
 import com.huanshi.gui.common.exception.ModelNotMatchedException;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.widget.TableModel;
-import java.awt.Component;
-import java.awt.font.FontRenderContext;
-import java.awt.geom.AffineTransform;
-import java.util.Enumeration;
+import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
+
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
-import lombok.Getter;
-import org.jetbrains.annotations.NotNull;
+import java.awt.Component;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.AffineTransform;
+import java.util.Enumeration;
 
 public class Table extends JTable implements Widget {
     @Getter

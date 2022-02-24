@@ -8,10 +8,11 @@ import com.huanshi.gui.model.container.loading.AbstractLoadingModel;
 import com.huanshi.gui.model.container.window.AbstractWindowModel;
 import com.huanshi.gui.view.container.Container;
 import com.huanshi.gui.view.widget.Widget;
-import java.util.HashMap;
-import java.util.Stack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.HashMap;
+import java.util.Stack;
 
 @SuppressWarnings("all")
 public class LayerSwitcher {

@@ -1,7 +1,8 @@
 package com.huanshi.gui.common.exception;
 
-import java.lang.annotation.Annotation;
 import org.jetbrains.annotations.NotNull;
+
+import java.lang.annotation.Annotation;
 
 public class IllegalAnnotationParameterException extends RuntimeException {
     public IllegalAnnotationParameterException(@NotNull Annotation annotation) {

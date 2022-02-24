@@ -8,10 +8,11 @@ import com.huanshi.gui.common.data.WidgetSize;
 import com.huanshi.gui.common.exception.ModelNotMatchedException;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.widget.CheckBoxModel;
-import java.awt.event.ItemEvent;
-import javax.swing.JCheckBox;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JCheckBox;
+import java.awt.event.ItemEvent;
 
 public class CheckBox extends JCheckBox implements Widget {
     @Getter

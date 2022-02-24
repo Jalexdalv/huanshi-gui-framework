@@ -4,9 +4,10 @@ import com.huanshi.gui.common.config.Parser;
 import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.common.data.Size;
 import com.huanshi.gui.model.AbstractModel;
-import java.awt.Color;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import java.awt.Color;
 
 @Getter
 public abstract class AbstractPanelModel extends AbstractModel {

@@ -12,6 +12,15 @@ import com.huanshi.gui.common.data.table.TableSize;
 import com.huanshi.gui.common.exception.IllegalConfigException;
 import com.huanshi.gui.common.type.ButtonType;
 import com.huanshi.gui.common.type.ScrollDirection;
+import lombok.SneakyThrows;
+import org.apache.commons.lang3.StringUtils;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.yaml.snakeyaml.Yaml;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
@@ -24,14 +33,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JTextField;
-import lombok.SneakyThrows;
-import org.apache.commons.lang3.StringUtils;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.yaml.snakeyaml.Yaml;
 
 @SuppressWarnings("all")
 public class Parser {

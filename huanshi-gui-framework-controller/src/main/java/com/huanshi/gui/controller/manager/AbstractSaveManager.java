@@ -1,10 +1,11 @@
 package com.huanshi.gui.controller.manager;
 
 import com.huanshi.gui.view.LayerSwitcher;
-import java.awt.Component;
+import org.jetbrains.annotations.NotNull;
+
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import org.jetbrains.annotations.NotNull;
+import java.awt.Component;
 
 @SuppressWarnings("all")
 public abstract class AbstractSaveManager extends AbstractManager {

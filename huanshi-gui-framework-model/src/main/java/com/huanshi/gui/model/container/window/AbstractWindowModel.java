@@ -6,9 +6,10 @@ import com.huanshi.gui.common.data.Position;
 import com.huanshi.gui.common.data.Size;
 import com.huanshi.gui.common.utils.GuiUtils;
 import com.huanshi.gui.model.AbstractModel;
-import java.awt.Color;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import java.awt.Color;
 
 @SuppressWarnings("all")
 @Getter

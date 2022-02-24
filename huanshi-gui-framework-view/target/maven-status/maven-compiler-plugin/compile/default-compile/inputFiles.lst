@@ -8,7 +8,6 @@ C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\scrollpane\AbstractScrollPane.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\PasswordField.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\DialogTitleBar.java
-C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\window\AbstractSplash.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\Widget.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\MouseLock.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\Text.java
@@ -19,6 +18,7 @@ C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\IconTextField.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\TextField.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\LoadingPanel.java
+C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\window\Splash.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\panel\IconPasswordField.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\container\scrollpane\TextAreaScrollPane.java
 C:\Users\Jalexdalv\IdeaProjects\huanshi-gui-framework\huanshi-gui-framework-view\src\main\java\com\huanshi\gui\view\widget\Button.java

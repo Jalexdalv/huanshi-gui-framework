@@ -8,12 +8,13 @@ import com.huanshi.gui.common.data.WidgetSize;
 import com.huanshi.gui.common.exception.ModelNotMatchedException;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.widget.ComboBoxModel;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 @SuppressWarnings("all")
 public class ComboBox extends JComboBox<String> implements Widget {

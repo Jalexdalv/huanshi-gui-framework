@@ -1,8 +1,9 @@
 package com.huanshi.gui.common.exception;
 
 import com.huanshi.gui.common.data.Key;
-import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
 
 public class CircularDependencyException extends RuntimeException {
     public CircularDependencyException(@NotNull Key... keys) {

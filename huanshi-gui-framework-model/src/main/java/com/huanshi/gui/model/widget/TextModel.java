@@ -3,10 +3,11 @@ package com.huanshi.gui.model.widget;
 import com.huanshi.gui.common.config.Parser;
 import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.model.AbstractModel;
-import java.awt.Color;
-import java.awt.Font;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import java.awt.Color;
+import java.awt.Font;
 
 @Getter
 public class TextModel extends AbstractModel {

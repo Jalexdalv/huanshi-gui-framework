@@ -12,17 +12,18 @@ import com.huanshi.gui.model.container.scrollpane.AbstractScrollPaneModel;
 import com.huanshi.gui.view.MouseLock;
 import com.huanshi.gui.view.container.Container;
 import com.huanshi.gui.view.widget.Widget;
+import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.util.LinkedList;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
-import lombok.Getter;
-import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("all")
 public abstract class AbstractScrollPane extends JScrollPane implements Container {

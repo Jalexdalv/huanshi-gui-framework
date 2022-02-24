@@ -5,9 +5,10 @@ import com.huanshi.gui.common.type.ButtonStatus;
 import com.huanshi.gui.model.container.panel.IconButtonModel;
 import com.huanshi.gui.view.MouseLock;
 import com.huanshi.gui.view.container.panel.IconButton;
+import org.jetbrains.annotations.NotNull;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("all")
 public abstract class AbstractIconButtonListener extends MouseAdapter implements Listener {

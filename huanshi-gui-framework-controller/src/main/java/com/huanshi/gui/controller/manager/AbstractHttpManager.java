@@ -5,8 +5,9 @@ import cn.gjing.http.HttpClient;
 import cn.gjing.http.HttpMethod;
 import cn.gjing.http.Listener;
 import com.alibaba.fastjson.JSON;
-import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
 
 @SuppressWarnings("all")
 public abstract class AbstractHttpManager extends AbstractManager {

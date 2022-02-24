@@ -5,11 +5,12 @@ import com.huanshi.gui.common.data.WidgetPosition;
 import com.huanshi.gui.common.data.WidgetSize;
 import com.huanshi.gui.common.utils.ReflectUtils;
 import com.huanshi.gui.model.AbstractModel;
+import lombok.SneakyThrows;
+import org.jetbrains.annotations.NotNull;
+
 import java.awt.Component;
 import java.awt.Dimension;
 import java.lang.reflect.Method;
-import lombok.SneakyThrows;
-import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("all")
 public interface Widget {

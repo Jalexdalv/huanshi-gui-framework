@@ -8,13 +8,14 @@ import com.huanshi.gui.common.data.table.TablePadding;
 import com.huanshi.gui.common.data.table.TableSize;
 import com.huanshi.gui.common.exception.TableRowOutOfBoundsException;
 import com.huanshi.gui.model.AbstractModel;
+import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import lombok.Getter;
-import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings(value = "all")
 @Getter

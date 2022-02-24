@@ -1,8 +1,9 @@
 package com.huanshi.gui.controller.listener;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractTableRowListener extends MouseAdapter implements Listener {
     @Override

@@ -10,12 +10,13 @@ import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.container.panel.AbstractPanelModel;
 import com.huanshi.gui.view.container.Container;
 import com.huanshi.gui.view.widget.Widget;
+import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Component;
 import java.util.LinkedList;
-import javax.swing.JPanel;
-import lombok.Getter;
-import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("all")
 public abstract class AbstractPanel extends JPanel implements Container {

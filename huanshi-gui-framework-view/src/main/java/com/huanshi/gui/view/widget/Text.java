@@ -8,9 +8,10 @@ import com.huanshi.gui.common.data.WidgetSize;
 import com.huanshi.gui.common.exception.ModelNotMatchedException;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.widget.TextModel;
-import javax.swing.JLabel;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JLabel;
 
 @SuppressWarnings("all")
 public class Text extends JLabel implements Widget {

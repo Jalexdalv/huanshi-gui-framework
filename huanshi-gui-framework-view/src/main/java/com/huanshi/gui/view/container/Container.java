@@ -3,11 +3,12 @@ package com.huanshi.gui.view.container;
 import com.huanshi.gui.common.utils.GuiUtils;
 import com.huanshi.gui.common.utils.ReflectUtils;
 import com.huanshi.gui.view.widget.Widget;
+import lombok.SneakyThrows;
+import org.jetbrains.annotations.NotNull;
+
 import java.awt.Component;
 import java.lang.reflect.Method;
 import java.util.LinkedList;
-import lombok.SneakyThrows;
-import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("all")
 public interface Container extends Widget {

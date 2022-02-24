@@ -17,18 +17,31 @@ import com.huanshi.gui.common.exception.AnnotationTypeException;
 import com.huanshi.gui.common.exception.CircularDependencyException;
 import com.huanshi.gui.common.exception.DuplicateKeyException;
 import com.huanshi.gui.common.exception.IllegalAnnotationParameterException;
-import com.huanshi.gui.common.exception.ModelNotFoundException;
 import com.huanshi.gui.common.exception.ManagerNotFoundException;
+import com.huanshi.gui.common.exception.ModelNotFoundException;
 import com.huanshi.gui.common.exception.ViewNotFoundException;
 import com.huanshi.gui.common.utils.ReflectUtils;
 import com.huanshi.gui.controller.listener.AbstractButtonListener;
 import com.huanshi.gui.controller.listener.AbstractComboBoxListener;
 import com.huanshi.gui.controller.listener.AbstractIconButtonListener;
 import com.huanshi.gui.controller.listener.AbstractTableRowListener;
-import com.huanshi.gui.controller.manager.AbstractManager;
 import com.huanshi.gui.controller.listener.Listener;
+import com.huanshi.gui.controller.manager.AbstractManager;
 import com.huanshi.gui.model.AbstractModel;
-import com.huanshi.gui.model.container.panel.*;
+import com.huanshi.gui.model.container.panel.DateTextFieldModel;
+import com.huanshi.gui.model.container.panel.DialogTitleBarModel;
+import com.huanshi.gui.model.container.panel.FrameTitleBarModel;
+import com.huanshi.gui.model.container.panel.IconButtonModel;
+import com.huanshi.gui.model.container.panel.IconPanelModel;
+import com.huanshi.gui.model.container.panel.IconPasswordFieldModel;
+import com.huanshi.gui.model.container.panel.IconTextFieldModel;
+import com.huanshi.gui.model.container.panel.IconTitleModel;
+import com.huanshi.gui.model.container.panel.LoadingPanelModel;
+import com.huanshi.gui.model.container.panel.TitleComboBoxModel;
+import com.huanshi.gui.model.container.panel.TitleDateTextFieldModel;
+import com.huanshi.gui.model.container.panel.TitlePasswordFieldModel;
+import com.huanshi.gui.model.container.panel.TitleTextAreaScrollPaneModel;
+import com.huanshi.gui.model.container.panel.TitleTextFieldModel;
 import com.huanshi.gui.model.container.scrollpane.TableScrollPaneModel;
 import com.huanshi.gui.model.container.scrollpane.TextAreaScrollPaneModel;
 import com.huanshi.gui.model.widget.ButtonModel;
@@ -42,7 +55,21 @@ import com.huanshi.gui.model.widget.TextFieldModel;
 import com.huanshi.gui.model.widget.TextModel;
 import com.huanshi.gui.view.LayerSwitcher;
 import com.huanshi.gui.view.container.Container;
-import com.huanshi.gui.view.container.panel.*;
+import com.huanshi.gui.view.container.panel.AbstractPanel;
+import com.huanshi.gui.view.container.panel.DateTextField;
+import com.huanshi.gui.view.container.panel.DialogTitleBar;
+import com.huanshi.gui.view.container.panel.FrameTitleBar;
+import com.huanshi.gui.view.container.panel.IconButton;
+import com.huanshi.gui.view.container.panel.IconPanel;
+import com.huanshi.gui.view.container.panel.IconPasswordField;
+import com.huanshi.gui.view.container.panel.IconTextField;
+import com.huanshi.gui.view.container.panel.IconTitle;
+import com.huanshi.gui.view.container.panel.LoadingPanel;
+import com.huanshi.gui.view.container.panel.TitleComboBox;
+import com.huanshi.gui.view.container.panel.TitleDateTextField;
+import com.huanshi.gui.view.container.panel.TitlePasswordField;
+import com.huanshi.gui.view.container.panel.TitleTextAreaScrollPane;
+import com.huanshi.gui.view.container.panel.TitleTextField;
 import com.huanshi.gui.view.container.scrollpane.AbstractScrollPane;
 import com.huanshi.gui.view.container.scrollpane.TableScrollPane;
 import com.huanshi.gui.view.container.scrollpane.TextAreaScrollPane;
@@ -56,14 +83,15 @@ import com.huanshi.gui.view.widget.Text;
 import com.huanshi.gui.view.widget.TextArea;
 import com.huanshi.gui.view.widget.TextField;
 import com.huanshi.gui.view.widget.Widget;
+import lombok.SneakyThrows;
+import org.jetbrains.annotations.NotNull;
+
+import javax.swing.SwingUtilities;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.LinkedList;
-import javax.swing.SwingUtilities;
-import lombok.SneakyThrows;
-import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("all")
 public class Loader {
@@ -383,6 +411,7 @@ public class Loader {
         view.superUpdateWidgetPosition();
         view.superUpdateContainerSize();
         view.superUpdateContainerPosition();
+        view.renderContainer();
         LOADED_VIEW_MAP.put(view.getKey(), view);
         Field layerSwitcherLoadedViewMap = LayerSwitcher.class.getDeclaredField("LOADED_VIEW_MAP");
         layerSwitcherLoadedViewMap.setAccessible(true);
@@ -470,6 +499,9 @@ public class Loader {
         if (Container.class.isAssignableFrom(clazz)) {
             ((Container) view).superUpdateContainerSize();
             ((Container) view).superUpdateContainerPosition();
+            ((Container) view).renderContainer();
+        } else {
+            view.renderWidget();
         }
         LOADED_VIEW_MAP.put(view.getKey(), view);
         Field layerSwitcherLoadedViewMap = LayerSwitcher.class.getDeclaredField("LOADED_VIEW_MAP");

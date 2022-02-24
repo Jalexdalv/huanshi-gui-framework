@@ -8,10 +8,11 @@ import com.huanshi.gui.common.data.WidgetSize;
 import com.huanshi.gui.common.exception.ModelNotMatchedException;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.widget.IconModel;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 @SuppressWarnings("all")
 public class Icon extends JLabel implements Widget {

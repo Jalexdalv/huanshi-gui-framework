@@ -9,29 +9,31 @@ import com.huanshi.gui.common.annotation.View;
 import com.huanshi.gui.common.exception.AnnotationTypeException;
 import com.huanshi.gui.common.exception.ApplicationNotFoundException;
 import com.huanshi.gui.common.exception.DuplicateApplicationException;
+import com.huanshi.gui.common.type.EnvironmentType;
 import com.huanshi.gui.common.utils.ReflectUtils;
 import com.huanshi.gui.controller.manager.AbstractManager;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.view.container.Container;
+import lombok.SneakyThrows;
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-import lombok.SneakyThrows;
-import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("all")
 public class Scanner {
     @SneakyThrows
-    public static void scan(@NotNull Class<?> startClass) {
+    public static void scan(@NotNull Class<?> startClass, @NotNull EnvironmentType environmentType) {
         HashMap<Class<?>, Model> modelMap = new HashMap<>();
         HashMap<Class<?>, View> viewMap = new HashMap<>();
         HashMap<Class<?>, Manager> managerMap = new HashMap<>();
         HashMap<Class<?>, Listener> listenerMap = new HashMap<>();
         Class<?> applicationClass = null;
-        for (Class<?> clazz : getClassList(startClass)) {
+        for (Class<?> clazz : getClassList(startClass, environmentType)) {
             Model model = clazz.getAnnotation(Model.class);
             View view = clazz.getAnnotation(View.class);
             Manager manager = clazz.getAnnotation(Manager.class);
@@ -82,24 +84,27 @@ public class Scanner {
 
     @SneakyThrows
     @NotNull
-    private static LinkedList<Class<?>> getClassList(@NotNull Class<?> startClass) {
+    private static LinkedList<Class<?>> getClassList(@NotNull Class<?> startClass, @NotNull EnvironmentType environmentType) {
         LinkedList<Class<?>> classList = new LinkedList<>();
-        //打包后扫描方式
-        JarFile jarFile = new JarFile(startClass.getProtectionDomain().getCodeSource().getLocation().getPath());
-        Enumeration<JarEntry> jarEntryEnumeration = jarFile.entries();
-        while (jarEntryEnumeration.hasMoreElements()) {
-            JarEntry jarEntry = jarEntryEnumeration.nextElement();
-            if (jarEntry.getName().endsWith(".class") && jarEntry.getName().startsWith("com/huanshi/") && !jarEntry.getName().contains("$")) {
-                classList.add(Class.forName(jarEntry.getName().replaceAll("/", ".").replaceAll(".class", "")));
+        switch (environmentType) {
+            case DEV -> {
+                for (String classPath : getClassPathList(new File("").getCanonicalFile())) {
+                    if (classPath.endsWith(".class")) {
+                        classList.add(Class.forName(classPath.split("classes\\\\")[1].replace(".class", "").replace("\\", ".")));
+                    }
+                }
+            }
+            case PROD -> {
+                JarFile jarFile = new JarFile(startClass.getProtectionDomain().getCodeSource().getLocation().getPath());
+                Enumeration<JarEntry> jarEntryEnumeration = jarFile.entries();
+                while (jarEntryEnumeration.hasMoreElements()) {
+                    JarEntry jarEntry = jarEntryEnumeration.nextElement();
+                    if (jarEntry.getName().endsWith(".class") && jarEntry.getName().startsWith("com/huanshi/") && !jarEntry.getName().contains("$")) {
+                        classList.add(Class.forName(jarEntry.getName().replaceAll("/", ".").replaceAll(".class", "")));
+                    }
+                }
             }
         }
-        //打包前扫描方式
-//        File file = new File("").getCanonicalFile();
-//        for (String classPath : getClassPathList(file)) {
-//            if (classPath.endsWith(".class")) {
-//                classList.add(Class.forName(classPath.split("classes\\\\")[1].replace(".class", "").replace("\\", ".")));
-//            }
-//        }
         return classList;
     }
 

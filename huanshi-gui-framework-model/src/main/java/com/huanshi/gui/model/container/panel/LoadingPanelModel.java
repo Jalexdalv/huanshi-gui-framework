@@ -3,10 +3,10 @@ package com.huanshi.gui.model.container.panel;
 import com.huanshi.gui.common.config.Parser;
 import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.common.data.LoadingSize;
-import com.huanshi.gui.model.AbstractModel;
-import java.awt.Color;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import java.awt.Color;
 
 @SuppressWarnings("all")
 @Getter

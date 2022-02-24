@@ -9,17 +9,18 @@ import com.huanshi.gui.common.exception.ModelNotMatchedException;
 import com.huanshi.gui.common.utils.GuiUtils;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.widget.TextFieldModel;
+import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.Toolkit;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import lombok.Getter;
-import org.jetbrains.annotations.NotNull;
 
 public class TextField extends JTextField implements Widget {
     @Getter

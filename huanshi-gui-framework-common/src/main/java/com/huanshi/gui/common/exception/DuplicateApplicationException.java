@@ -1,7 +1,8 @@
 package com.huanshi.gui.common.exception;
 
-import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
 
 public class DuplicateApplicationException extends RuntimeException {
     public DuplicateApplicationException(@NotNull Class<?>... classes) {

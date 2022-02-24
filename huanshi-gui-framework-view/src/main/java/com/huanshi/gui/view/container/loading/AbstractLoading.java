@@ -9,15 +9,15 @@ import com.huanshi.gui.common.utils.GuiUtils;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.container.loading.AbstractLoadingModel;
 import com.huanshi.gui.view.LayerSwitcher;
-import com.huanshi.gui.view.MouseLock;
 import com.huanshi.gui.view.container.Container;
 import com.huanshi.gui.view.container.panel.LoadingPanel;
 import com.huanshi.gui.view.widget.Widget;
-import java.awt.Component;
-import java.util.LinkedList;
-import javax.swing.JDialog;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JDialog;
+import java.awt.Component;
+import java.util.LinkedList;
 
 @SuppressWarnings("all")
 public abstract class AbstractLoading extends JDialog implements Container {

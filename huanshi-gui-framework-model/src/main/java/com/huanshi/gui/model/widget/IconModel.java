@@ -3,9 +3,10 @@ package com.huanshi.gui.model.widget;
 import com.huanshi.gui.common.config.Parser;
 import com.huanshi.gui.common.data.Key;
 import com.huanshi.gui.model.AbstractModel;
-import javax.swing.Icon;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.Icon;
 
 @Getter
 public class IconModel extends AbstractModel {

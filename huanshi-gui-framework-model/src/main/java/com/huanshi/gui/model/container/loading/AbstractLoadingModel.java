@@ -8,9 +8,10 @@ import com.huanshi.gui.common.data.Size;
 import com.huanshi.gui.common.utils.GuiUtils;
 import com.huanshi.gui.model.AbstractModel;
 import com.huanshi.gui.model.container.panel.LoadingPanelModel;
-import java.awt.Color;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
+
+import java.awt.Color;
 
 @SuppressWarnings("all")
 public abstract class AbstractLoadingModel extends AbstractModel {

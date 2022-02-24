@@ -1,9 +1,10 @@
 package com.huanshi.gui.common.exception;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
 
 public class AnnotationTypeException extends RuntimeException {
     public AnnotationTypeException(@NotNull Annotation annotation, @NotNull Field field) {

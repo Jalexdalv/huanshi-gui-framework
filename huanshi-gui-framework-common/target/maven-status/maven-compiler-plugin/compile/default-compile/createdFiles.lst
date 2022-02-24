@@ -2,6 +2,7 @@ com\huanshi\gui\common\config\Parser.class
 com\huanshi\gui\common\exception\IllegalSubKeyException.class
 com\huanshi\gui\common\data\table\TableHeader.class
 com\huanshi\gui\common\exception\ComboBoxItemNotFoundException.class
+com\huanshi\gui\common\type\EnvironmentType.class
 com\huanshi\gui\common\data\table\TableData.class
 com\huanshi\gui\common\data\LoadingSize.class
 com\huanshi\gui\common\exception\CircularDependencyException.class

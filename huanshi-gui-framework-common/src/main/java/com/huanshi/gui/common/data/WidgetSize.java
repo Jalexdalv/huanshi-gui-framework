@@ -1,10 +1,11 @@
 package com.huanshi.gui.common.data;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
 @SuppressWarnings("all")
 public class WidgetSize {
