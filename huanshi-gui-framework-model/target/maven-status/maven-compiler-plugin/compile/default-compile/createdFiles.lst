@@ -20,6 +20,7 @@ com\huanshi\gui\model\container\panel\AbstractFoldPanelModel.class
 com\huanshi\gui\model\widget\CheckBoxModel.class
 com\huanshi\gui\model\container\scrollpane\AbstractScrollPaneModel.class
 com\huanshi\gui\model\widget\TextFieldModel.class
+com\huanshi\gui\model\container\panel\IconPasswordFieldModel.class
 com\huanshi\gui\model\container\panel\IconTitleModel.class
 com\huanshi\gui\model\AbstractModel.class
 com\huanshi\gui\model\container\panel\IconButtonModel$1.class
@@ -29,6 +30,7 @@ com\huanshi\gui\model\widget\ComboBoxModel.class
 com\huanshi\gui\model\container\panel\DateTextFieldModel.class
 com\huanshi\gui\model\container\panel\TitlePasswordFieldModel.class
 com\huanshi\gui\model\container\window\AbstractWindowModel.class
+com\huanshi\gui\model\container\panel\IconTextFieldModel.class
 com\huanshi\gui\model\container\panel\TitleDateTextFieldModel.class
 com\huanshi\gui\model\widget\PasswordFieldModel.class
 com\huanshi\gui\model\container\panel\FrameTitleBarModel.class

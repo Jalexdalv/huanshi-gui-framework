@@ -2,6 +2,7 @@ com\huanshi\gui\view\widget\Table.class
 com\huanshi\gui\view\widget\Table$1.class
 com\huanshi\gui\view\container\scrollpane\AbstractScrollPane$2.class
 com\huanshi\gui\view\widget\Widget.class
+com\huanshi\gui\view\container\panel\IconPasswordField.class
 com\huanshi\gui\view\container\panel\TitleTextField.class
 com\huanshi\gui\view\container\panel\AbstractFoldPanel$1.class
 com\huanshi\gui\view\container\panel\DateTextField.class
@@ -13,6 +14,7 @@ com\huanshi\gui\view\widget\TextArea.class
 com\huanshi\gui\view\container\scrollpane\TextAreaScrollPane.class
 com\huanshi\gui\view\widget\Text.class
 com\huanshi\gui\view\container\panel\LoadingPanel$1.class
+com\huanshi\gui\view\container\panel\IconTextField.class
 com\huanshi\gui\view\widget\TextArea$2.class
 com\huanshi\gui\view\container\scrollpane\AbstractScrollPane$1.class
 com\huanshi\gui\view\container\panel\DialogTitleBar.class
