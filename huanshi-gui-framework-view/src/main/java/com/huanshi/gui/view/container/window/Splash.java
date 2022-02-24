@@ -26,6 +26,7 @@ public class Splash extends JWindow {
         ImageIcon imageIcon = new ImageIcon(path);
         JLabel icon = new JLabel(imageIcon);
         getContentPane().add(icon);
+        icon.setBounds(0, 0, (int) (imageIcon.getIconWidth() * getWIDTH_SCALE()), (int) (imageIcon.getIconHeight() * getHEIGHT_SCALE()));
         setBounds((int) ((getSCREEN_WIDTH() - imageIcon.getIconWidth() * getWIDTH_SCALE()) / (double) 2), (int) ((getSCREEN_HEIGHT() - imageIcon.getIconHeight() * getHEIGHT_SCALE()) / (double) 2), (int) (imageIcon.getIconWidth() * getWIDTH_SCALE()), (int) (imageIcon.getIconHeight() * getHEIGHT_SCALE()));
     }
 

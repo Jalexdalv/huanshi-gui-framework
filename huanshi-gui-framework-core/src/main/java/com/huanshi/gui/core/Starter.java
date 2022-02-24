@@ -33,7 +33,7 @@ public class Starter {
 
     public static void start(@NotNull Class<?> startClass) {
         try {
-            File settingFile = new File(new File("").getCanonicalPath() + "/setting.ini");
+            File settingFile = new File(new File("").getCanonicalPath() + "\\setting.ini");
             try (FileReader fileReader = new FileReader(settingFile);
                  BufferedReader bufferedReader = new BufferedReader(fileReader)) {
                 String environmentSetting = StringUtils.trimToNull(bufferedReader.readLine());
@@ -57,11 +57,12 @@ public class Starter {
                 String[] splashSettings = splashSetting.split("=");
                 if ("[splash]".equals(StringUtils.trimToNull(splashSettings[0]))) {
                     try {
-                        String splashPath = new File("").getCanonicalPath() + "/" + StringUtils.trimToNull(splashSettings[1]);
+                        String splashPath = new File("").getCanonicalPath() + "\\" + StringUtils.trimToNull(splashSettings[1]);
                         Image image = ImageIO.read(new File(splashPath));
                         if (image != null) {
                             splash = new Splash(splashPath);
                         }
+                        System.out.println(splashPath);
                     } catch (Throwable throwable) {
                         bufferedReader.close();
                         fileReader.close();
