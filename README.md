@@ -29,3 +29,5 @@
 + 加入了CustomFrame窗口组件
 + 加入了Panel背景图片选项
 + 加入了Frame是否允许最大化选项
++ 加入了自底向上repaint机制
++ 修改了splash图片渲染机制
