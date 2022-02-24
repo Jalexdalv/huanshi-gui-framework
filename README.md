@@ -18,3 +18,7 @@
 待更新  
 ## 例子
 待更新  
+## 已知BUG
++ 在系统缩放情况下，某些组件以及图片会变得模糊
+## 更新记录
++ 加入了IconTextField与IconPasswordField组件
