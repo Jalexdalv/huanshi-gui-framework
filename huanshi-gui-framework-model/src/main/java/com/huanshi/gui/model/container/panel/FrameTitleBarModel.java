@@ -34,7 +34,7 @@ public class FrameTitleBarModel extends AbstractPanelModel {
     @Override
     public void init(@NotNull Parser parser, @NotNull Key key) {
         standardMaximizeIcon = iconModel.getIcon();
-        key.addLast("max-icon"); maxMaximizeIcon = parser.parseIcon(key); key.removeLast();
+        key.addLast("max-icon"); maxMaximizeIcon = parser.parseIcon(false, key); key.removeLast();
     }
 
     public void setFrameStatus(@NotNull FrameStatus frameStatus) {

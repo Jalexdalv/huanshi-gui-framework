@@ -46,6 +46,7 @@ public class Icon extends JPanel implements Widget {
                         setWidgetSize(iconModel.getIcon().getIconWidth(), iconModel.getIcon().getIconHeight());
                     } else {
                         repaint();
+                        firePropertyChange("repaint", e.getOldValue(), e.getNewValue());
                     }
                 }
             }

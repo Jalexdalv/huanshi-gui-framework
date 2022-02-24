@@ -16,6 +16,7 @@ com\huanshi\gui\view\container\panel\LoadingPanel$1.class
 com\huanshi\gui\view\container\panel\IconTextField.class
 com\huanshi\gui\view\widget\TextArea$2.class
 com\huanshi\gui\view\container\scrollpane\AbstractScrollPane$1.class
+com\huanshi\gui\view\container\window\SplashPanel.class
 com\huanshi\gui\view\container\panel\DialogTitleBar.class
 com\huanshi\gui\view\widget\TextField$2.class
 com\huanshi\gui\view\container\scrollpane\AbstractScrollPane.class

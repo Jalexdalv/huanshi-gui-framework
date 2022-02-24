@@ -42,8 +42,8 @@ public class IconButtonModel extends IconModel {
             }
             case ICON -> {
                 defaultIcon = getIcon();
-                key.addLast("touch-icon"); touchIcon = parser.parseIcon(key); key.removeLast();
-                key.addLast("press-icon"); pressIcon = parser.parseIcon(key); key.removeLast();
+                key.addLast("touch-icon"); touchIcon = parser.parseIcon(false, key); key.removeLast();
+                key.addLast("press-icon"); pressIcon = parser.parseIcon(false, key); key.removeLast();
             }
         }
         key.addLast("enable"); isEnable = parser.parseBoolean(false, key); key.removeLast();

@@ -215,19 +215,9 @@ public class Parser {
     }
 
     @NotNull
-    public Icon parseIcon(@NotNull Key key) {
-        if (!(getProperty(key) instanceof Map<?, ?> map) || !(map.get("path") instanceof String path) || !(map.get("width") instanceof Integer width) || !(map.get("height") instanceof Integer height)) {
-            throw new IllegalConfigException(key);
-        }
-        ImageIcon imageIcon = new ImageIcon(StringUtils.trim(path));
-        imageIcon.setImage(imageIcon.getImage().getScaledInstance((int) (width * WIDTH_SCALE), (int) (height * HEIGHT_SCALE), Image.SCALE_SMOOTH));
-        return imageIcon;
-    }
-
-    @Nullable
-    public Icon parseBackgroundIcon(@NotNull Key key) {
+    public Icon parseIcon(boolean nullable, @NotNull Key key) {
         Object value = getProperty(key);
-        if (value == null) {
+        if (value == null && nullable) {
             return null;
         }
         if (!(value instanceof Map<?, ?> map) || !(map.get("path") instanceof String path) || !(map.get("width") instanceof Integer width) || !(map.get("height") instanceof Integer height)) {
@@ -237,6 +227,20 @@ public class Parser {
         imageIcon.setImage(imageIcon.getImage().getScaledInstance((int) (width * WIDTH_SCALE), (int) (height * HEIGHT_SCALE), Image.SCALE_SMOOTH));
         return imageIcon;
     }
+//
+//    @Nullable
+//    public Icon parseBackgroundIcon(@NotNull Key key) {
+//        Object value = getProperty(key);
+//        if (value == null) {
+//            return null;
+//        }
+//        if (!(value instanceof Map<?, ?> map) || !(map.get("path") instanceof String path) || !(map.get("width") instanceof Integer width) || !(map.get("height") instanceof Integer height)) {
+//            throw new IllegalConfigException(key);
+//        }
+//        ImageIcon imageIcon = new ImageIcon(StringUtils.trim(path));
+//        imageIcon.setImage(imageIcon.getImage().getScaledInstance((int) (width * WIDTH_SCALE), (int) (height * HEIGHT_SCALE), Image.SCALE_SMOOTH));
+//        return imageIcon;
+//    }
 
     @NotNull
     public Color parseColor(@NotNull Key key) {

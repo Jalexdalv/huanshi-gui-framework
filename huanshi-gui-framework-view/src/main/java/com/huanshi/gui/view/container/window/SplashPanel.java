@@ -3,11 +3,12 @@ package com.huanshi.gui.view.container.window;
 import lombok.Getter;
 
 import javax.swing.ImageIcon;
-import javax.swing.JWindow;
+import javax.swing.JPanel;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.GraphicsEnvironment;
 
-public class Splash extends JWindow {
+public class SplashPanel extends JPanel {
     private static final GraphicsEnvironment GRAPHICS_ENVIRONMENT = GraphicsEnvironment.getLocalGraphicsEnvironment();
     @Getter
     private static final int SCREEN_WIDTH = (int) GRAPHICS_ENVIRONMENT.getMaximumWindowBounds().getWidth();
@@ -17,22 +18,17 @@ public class Splash extends JWindow {
     private static final double WIDTH_SCALE = GRAPHICS_ENVIRONMENT.getDefaultScreenDevice().getDefaultConfiguration().getBounds().getWidth() / (double) 1920;
     @Getter
     private static final double HEIGHT_SCALE = GRAPHICS_ENVIRONMENT.getDefaultScreenDevice().getDefaultConfiguration().getBounds().getHeight() / (double) 1080;
+    private final ImageIcon imageIcon;
 
-    public Splash(String path) {
+    public SplashPanel(ImageIcon imageIcon) {
         setLayout(null);
         setBackground(new Color(255, 255, 255, 0));
-        getContentPane().setBackground(new Color(255, 255, 255, 0));
-        ImageIcon imageIcon = new ImageIcon(path);
-        setContentPane(new SplashPanel(imageIcon));
-        setBounds((int) ((getSCREEN_WIDTH() - imageIcon.getIconWidth() * getWIDTH_SCALE()) / (double) 2), (int) ((getSCREEN_HEIGHT() - imageIcon.getIconHeight() * getHEIGHT_SCALE()) / (double) 2), (int) (imageIcon.getIconWidth() * getWIDTH_SCALE()), (int) (imageIcon.getIconHeight() * getHEIGHT_SCALE()));
+        this.imageIcon = imageIcon;
     }
 
-    public void start() {
-        setVisible(true);
-    }
-
-    public void destroy() {
-        setVisible(false);
-        dispose();
+    @Override
+    public void paintComponent(Graphics graphics) {
+        super.paintComponent(graphics);
+        graphics.drawImage(imageIcon.getImage(), 0, 0, (int) (imageIcon.getIconWidth() * getWIDTH_SCALE()), (int) (imageIcon.getIconHeight() * getHEIGHT_SCALE()), this);
     }
 }

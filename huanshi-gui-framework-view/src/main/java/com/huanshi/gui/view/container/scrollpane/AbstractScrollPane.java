@@ -88,16 +88,19 @@ public abstract class AbstractScrollPane extends JScrollPane implements Containe
         });
         for (Widget widget : widgetList) {
             ((Component) widget).addPropertyChangeListener(e -> {
-                if ("size".equals(e.getPropertyName())) {
-                    try {
-                        superUpdateWidgetSize();
-                        superUpdateWidgetPosition();
-                        superUpdateContainerSize();
-                        superUpdateContainerPosition();
-                    } catch (Throwable throwable) {
-                        GuiUtils.showErrorDialog(throwable);
+                switch (e.getPropertyName()) {
+                    case "size" -> {
+                        try {
+                            superUpdateWidgetSize();
+                            superUpdateWidgetPosition();
+                            superUpdateContainerSize();
+                            superUpdateContainerPosition();
+                        } catch (Throwable throwable) {
+                            GuiUtils.showErrorDialog(throwable);
+                        }
+                        renderContainer();
                     }
-                    renderContainer();
+                    case "repaint" -> repaint();
                 }
             });
         }

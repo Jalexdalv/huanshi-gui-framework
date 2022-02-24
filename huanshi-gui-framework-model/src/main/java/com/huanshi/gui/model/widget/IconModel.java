@@ -17,7 +17,7 @@ public class IconModel extends AbstractModel {
     @Override
     public void init(@NotNull Parser parser, @NotNull Key key) {
         key.addLast("background"); background = parser.parseColor(key); key.removeLast();
-        icon = parser.parseIcon(key);
+        icon = parser.parseIcon(false, key);
     }
 
     public void setBackground(@NotNull Color background) {

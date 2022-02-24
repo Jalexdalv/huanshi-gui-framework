@@ -19,7 +19,7 @@ public abstract class AbstractPanelModel extends AbstractModel {
     @Override
     public void init(@NotNull Parser parser, @NotNull Key key) {
         key.addLast("background"); background = parser.parseColor(key); key.removeLast();
-        key.addLast("background-icon"); backgroundIcon = parser.parseBackgroundIcon(key); key.removeLast();
+        key.addLast("background-icon"); backgroundIcon = parser.parseIcon(true, key); key.removeLast();
         key.addLast("size"); size = parser.parseSize(key); key.removeLast();
     }
 
